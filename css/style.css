@@ -1,0 +1,106 @@
+:root {
+    --primary: #00B87B;
+    --secondary: #314355;
+    --light: #F2F2F2;
+    --dark: #2C3E50;
+  }
+
+
+* {
+    box-sizing: border-box;
+    position: relative;
+    min-width: 0;
+    /* Herramienta de depuración para maquetar web */
+    border: 1px solid red;
+}
+
+body {
+    min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: wrap;
+}
+
+/* estilo para pagina principal*/
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: rgb(131, 58, 180);
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+}
+
+header {
+    background-color: var(--primary);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container-fluid {
+    padding: 2rem; 
+    color: white;
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 80vh;
+}
+
+.main-text {
+    width: 40%;
+}
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin: 0 0.5rem;
+}
+
+.btn-primary {
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+}
+
+.btn-secondary {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+}
+
+.icon-tabler {
+    width: 240px;
+    height: 240px;
+}
+
+/* Estilos para la forma de onda */
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('wave.svg') repeat-x; 
+    background-size: cover;
+}
