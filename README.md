@@ -1,6 +1,18 @@
-# TranquiApp
+<h1 align="center">Proyecto Web Front-End: TranquiApp</h1>
 
-Este proyecto es una aplicación web de monitoreo de salud mental y estrés llamada TranquiApp. Proporciona funcionalidades para el registro de usuarios, inicio de sesión, cuestionario psicológico y recomendaciones basadas en IA.
+<p align="center">
+    <a href="https://github.com/CodeGeekR">
+        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white&labelColor=101010" alt="JavaScript">
+    </a>
+    <a href="https://getbootstrap.com/">
+        <img src="https://img.shields.io/badge/bootstrap-6F2CF3?style=for-the-badge&logo=bootstrap&logoColor=white&labelColor=101010" alt="Bootstrap">
+    </a>
+    <a href="https://github.com/CodeGeekR">
+        <img src="https://img.shields.io/badge/css-1AA1FF?style=for-the-badge&logo=css3&logoColor=white&labelColor=101010" alt="CSS3">
+    </a>
+</p>
+
+Este proyecto es una aplicación web de monitoreo de salud mental y estrés. Proporciona funcionalidades para el registro de usuarios, inicio de sesión, cuestionario psicológico y recomendaciones basadas en IA.
 
 ## Estructura del proyecto
 
