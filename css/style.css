@@ -1,45 +1,63 @@
+/* Importamos la fuente EB Garamond desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
+/* Aplicamos box-sizing: border-box a todos los elementos y sus pseudo-elementos */
+/* Esto hace que el padding y border se incluyan en el ancho y alto del elemento */
 *,
 *:after,
 *:before {
 	box-sizing: border-box;
 }
 
+/* Definimos una propiedad personalizada --expanded */
+/* Esta propiedad hereda su valor y tiene un valor inicial de 0 */
 @property --expanded {
 	syntax: '<number>';
 	inherits: true;
 	initial-value: 0;
 }
 
+/* Definimos una propiedad personalizada --active */
+/* Esta propiedad hereda su valor y tiene un valor inicial de 0 */
 @property --active {
 	syntax: '<number>';
 	inherits: true;
 	initial-value: 0;
 }
 
+/* Definimos colores y otras propiedades personalizadas en :root */
+/* :root es equivalente a html y es útil para definir propiedades CSS personalizadas */
 :root {
-    --primary: #b216e0;
-    --secondary: #10eeac;
-    --light: #daecff;
-    --dark: #000000;
+	/* Definimos los colores primario, secundario, claro y oscuro */
+	--primary: #b216e0;
+	--secondary: #10eeac;
+	--light: #daecff;
+	--dark: #000000;
+
+	/* Definimos el tamaño de un elemento y el color de acento */
 	--item: 80px;
 	--accent: hsl(40 100% 75% / 0.95);
+
+	/* Definimos el espacio entre elementos y la duración de las transiciones */
 	--gap: 0.75rem;
 	--transition: 0.25s;
+
+	/* Definimos una función de tiempo para las transiciones */
+	/* Esta función crea una transición elástica */
 	--elastic: linear(
-    0 0%, 0.0012 14.95%, 0.0089 22.36%,
-    0.0297 28.43%, 0.0668 33.43%,
-    0.0979 36.08%, 0.1363 38.55%,
-    0.2373 43.07%, 0.3675 47.01%,
-    0.5984 52.15%, 0.7121 55.23%,
-    0.8192 59.21%, 0.898 63.62%,
-    0.9297 66.23%, 0.9546 69.06%,
-    0.9733 72.17%, 0.9864 75.67%,
-    0.9982 83.73%, 1 100%
+	0 0%, 0.0012 14.95%, 0.0089 22.36%,
+	0.0297 28.43%, 0.0668 33.43%,
+	0.0979 36.08%, 0.1363 38.55%,
+	0.2373 43.07%, 0.3675 47.01%,
+	0.5984 52.15%, 0.7121 55.23%,
+	0.8192 59.21%, 0.898 63.62%,
+	0.9297 66.23%, 0.9546 69.06%,
+	0.9733 72.17%, 0.9864 75.67%,
+	0.9982 83.73%, 1 100%
   );
 }
 
+/* Reset CSS */
 * {
     box-sizing: border-box;
     position: relative;
@@ -48,43 +66,48 @@
     /* border: 1px solid red; */
 }
 
+/* Establece el esquema de color del documento a 'light' */
 html {
 	color-scheme: light only;
 }
 
+/* Aplica un comportamiento de desplazamiento suave cuando no hay ningún elemento enfocado */
 html:not(:focus-within) {
 	scroll-behavior: smooth;
 }
 
+/* Establece el diseño del cuerpo del documento */
 body {
-	display: flex;
-	flex-direction: column;
-	place-items: center;
-	min-height: 100vh;
-	padding: 1rem;
-	font-family:  "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
+	display: flex; /* Utiliza un diseño flexible */
+	flex-direction: column; /* Organiza los elementos hijos en una columna */
+	place-items: center; /* Centra los elementos hijos */
+	min-height: 100vh; /* Asegura que el cuerpo tenga al menos la altura de la ventana de visualización */
+	padding: 1rem; /* Aplica un relleno alrededor del cuerpo */
+	font-family:  "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui; /* Define la familia de fuentes */
 }
 
+/* Aplica un margen superior a los párrafos */
 p {
-    margin-top: 10%;
-
+	margin-top: 10%;
 }
 
+/* Establece el diseño de las secciones dentro del elemento principal */
 main section {
-	min-height: 100vh;
-	display: grid;
-	place-items: center;
-	align-content: center;
-	text-align: center;
+	min-height: 100vh; /* Asegura que las secciones tengan al menos la altura de la ventana de visualización */
+	display: grid; /* Utiliza un diseño de cuadrícula */
+	place-items: center; /* Centra los elementos hijos */
+	align-content: center; /* Alinea el contenido en el centro */
+	text-align: center; /* Alinea el texto al centro */
 }
 
+/* Define el diseño y el fondo del pseudo-elemento before del cuerpo */
 body::before {
-	--line: color-mix(in lch, canvasText 25%, transparent);
-	--size: 60px;
-	content: '';
-	height: 100vh;
-	width: 100vw;
-	position: fixed;
+	--line: color-mix(in lch, canvasText 25%, transparent); /* Define una línea semi-transparente */
+	--size: 60px; /* Define el tamaño de la línea */
+	content: ''; /* Es necesario para que el pseudo-elemento se muestre */
+	height: 100vh; /* Asegura que el pseudo-elemento tenga la altura de la ventana de visualización */
+	width: 100vw; /* Asegura que el pseudo-elemento tenga el ancho de la ventana de visualización */
+	position: fixed; /* Fija el pseudo-elemento en la ventana de visualización */
 	background: linear-gradient(
 				90deg,
 				var(--line) 1px,
@@ -93,272 +116,304 @@ body::before {
 			0 -5vmin / var(--size) var(--size),
 		linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0 -5vmin / var(
 				--size
-			) var(--size);
-	mask: linear-gradient(-15deg, transparent 60%, white);
-	top: 0;
-	z-index: -1;
+			) var(--size); /* Define un fondo con un patrón de líneas */
+	mask: linear-gradient(-15deg, transparent 60%, white); /* Aplica una máscara al pseudo-elemento */
+	top: 0; /* Posiciona el pseudo-elemento en la parte superior de la ventana de visualización */
+	z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
 }
 
+/* Define el estilo de los enlaces de seguimiento */
 .follow-link {
-	border: 2px solid canvasText;
-	border-radius: 100px;
-	display: flex;
-	gap: 0 1rem;
-	padding: 0.5rem 1rem;
-	white-space: nowrap;
-	color: canvasText;
-	text-decoration: none;
-	align-items: center;
-	font-weight: 400;
-	font-size: 1.25rem;
+	border: 2px solid canvasText; /* Define un borde sólido */
+	border-radius: 100px; /* Redondea las esquinas del borde */
+	display: flex; /* Utiliza un diseño flexible */
+	gap: 0 1rem; /* Define un espacio entre los elementos hijos */
+	padding: 0.5rem 1rem; /* Aplica un relleno alrededor del enlace */
+	white-space: nowrap; /* Evita que el texto del enlace se divida en varias líneas */
+	color: canvasText; /* Define el color del texto */
+	text-decoration: none; /* Elimina la decoración del texto */
+	align-items: center; /* Centra los elementos hijos verticalmente */
+	font-weight: 400; /* Define el grosor de la fuente */
+	font-size: 1.25rem; /* Define el tamaño de la fuente */
 }
 
+/* Define el estilo de los enlaces de seguimiento cuando se pasan por encima o se enfocan */
 .follow-link:is(:hover, :focus-visible) {
-	background: color-mix(in lch, canvasText 2%, hsl(0 0% 0% / 0.1));
+	background: color-mix(in lch, canvasText 2%, hsl(0 0% 0% / 0.1)); /* Define un fondo semi-transparente */
 }
 
+/* Define el tamaño de los elementos SVG dentro de los enlaces de seguimiento */
 .follow-link svg {
 	width: 48px;
 }
 
+/* Estilos para los encabezados h2 */
 h2 {
-	font-family: "EB Garamond", serif;
-	font-size: clamp(1.5rem, 3vw + 1rem, 6rem);
+	font-family: "EB Garamond", serif; /* Define la familia de fuentes */
+	font-size: clamp(1.5rem, 3vw + 1rem, 6rem); /* Define el tamaño de la fuente con un valor mínimo, un valor escalable y un valor máximo */
 }
 
+/* Estilos para el encabezado de la página */
 header {
-	min-height: 50vh;
-	display: grid;
-	place-items: center;
-	align-content: center;
-	text-align: center;
+	min-height: 50vh; /* Define la altura mínima del encabezado como el 50% de la altura de la ventana de visualización */
+	display: grid; /* Utiliza un diseño de cuadrícula */
+	place-items: center; /* Centra los elementos hijos */
+	align-content: center; /* Alinea el contenido en el centro */
+	text-align: center; /* Alinea el texto al centro */
 }
 
+/* Estilos para la barra de navegación */
 nav {
-	position: sticky;
-	top: 1rem;
-	display: flex;
-	border-radius: 100px;
-	overflow: hidden;
-	background: canvasText;
-	color: canvas;
-	font-size: 14px;
-	height: 48px;
-	padding-left: 0rem;
+	position: sticky; /* Fija la barra de navegación en la parte superior de la ventana de visualización */
+	top: 1rem; /* Define la distancia desde la parte superior de la ventana de visualización */
+	display: flex; /* Utiliza un diseño flexible */
+	border-radius: 100px; /* Redondea las esquinas del borde */
+	overflow: hidden; /* Oculta el contenido que se desborda */
+	background: canvasText; /* Define el color de fondo */
+	color: canvas; /* Define el color del texto */
+	font-size: 14px; /* Define el tamaño de la fuente */
+	height: 48px; /* Define la altura de la barra de navegación */
+	padding-left: 0rem; /* Define el relleno a la izquierda */
 }
 
+/* Estilos para el contenido de la barra de navegación */
 .nav__content {
-	display: grid;
+	display: grid; /* Utiliza un diseño de cuadrícula */
 }
 
+/* Estilos para los elementos de la lista en la barra de navegación */
 nav li {
-	width: var(--item);
-	text-align: center;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	opacity: var(--expanded);
-	transition: opacity var(--transition) calc(0.75s + (var(--i) * 0.05s));
+	width: var(--item); /* Define el ancho del elemento de la lista */
+	text-align: center; /* Alinea el texto al centro */
+	height: 100%; /* Define la altura del elemento de la lista como el 100% de la altura de su contenedor */
+	display: flex; /* Utiliza un diseño flexible */
+	align-items: center; /* Centra los elementos hijos verticalmente */
+	justify-content: center; /* Centra los elementos hijos horizontalmente */
+	opacity: var(--expanded); /* Define la opacidad del elemento de la lista */
+	transition: opacity var(--transition) calc(0.75s + (var(--i) * 0.05s)); /* Define una transición para la opacidad */
 }
 
-nav li:nth-of-type(1) { --i: 0; }
-nav li:nth-of-type(2) { --i: 1; }
-nav li:nth-of-type(3) { --i: 2; }
-
+/* Estilos para los enlaces en los elementos de la lista en la barra de navegación */
 nav li a {
-	color: canvas;
-	width: 100%;
-	height: 100%;
-	text-decoration: none;
-	display: grid;
-	place-items: center;
-	white-space: nowrap;
+	color: canvas; /* Define el color del texto */
+	width: 100%; /* Define el ancho del enlace como el 100% del ancho de su contenedor */
+	height: 100%; /* Define la altura del enlace como el 100% de la altura de su contenedor */
+	text-decoration: none; /* Elimina la decoración del texto */
+	display: grid; /* Utiliza un diseño de cuadrícula */
+	place-items: center; /* Centra los elementos hijos */
+	white-space: nowrap; /* Evita que el texto del enlace se divida en varias líneas */
 }
 
+/* Estilos para los enlaces con un atributo href de "#" */
 [href="#"] {
-	width: 48px;
-	display: grid;
-	place-items: center;
-	color: var(--accent);
+	width: 48px; /* Define el ancho del enlace */
+	display: grid; /* Utiliza un diseño de cuadrícula */
+	place-items: center; /* Centra los elementos hijos */
+	color: var(--accent); /* Define el color del texto */
 }
 
+/* Estilos para los elementos SVG dentro de los enlaces con un atributo href de "#" */
 [href="#"] svg {
-	width: 24px;
+	width: 24px; /* Define el ancho del elemento SVG */
 }
 
+/* Estilos para los enlaces con la clase "bear-link" */
 .bear-link {
-	color: canvasText;
-	position: fixed;
-	top: 1rem;
-	left: 1rem;
-	width: 48px;
-	aspect-ratio: 1;
-	display: grid;
-	place-items: center;
-	opacity: 0.8;
-    text-decoration: none;
+	color: canvasText; /* Define el color del texto */
+	position: fixed; /* Fija el enlace en la ventana de visualización */
+	top: 1rem; /* Define la distancia desde la parte superior de la ventana de visualización */
+	left: 1rem; /* Define la distancia desde la parte izquierda de la ventana de visualización */
+	width: 48px; /* Define el ancho del enlace */
+	aspect-ratio: 1; /* Mantiene la relación de aspecto del enlace */
+	display: grid; /* Utiliza un diseño de cuadrícula */
+	place-items: center; /* Centra los elementos hijos */
+	opacity: 0.8; /* Define la opacidad del enlace */
+	text-decoration: none; /* Elimina la decoración del texto */
 }
-
+/* Aumenta la opacidad de los enlaces con las clases .x-link y .bear-link cuando se pasan por encima o se enfocan */
 :where(.x-link, .bear-link):is(:hover, :focus-visible) {
 	opacity: 1;
 }
+
+/* Define el tamaño de la fuente del elemento <i> dentro de los enlaces con la clase .bear-link */
 .bear-link i {
 	/*cambiar tamaño del icono*/
-    font-size: 50px;
+	font-size: 50px;
 }
 
+/* Oculta los enlaces con la clase .bear-link en pantallas con un ancho máximo de 768px */
 @media(max-width: 768px) {
 	.bear-link { display: none; }
 }
 
-/* .nav__content svg {
-	stroke: #2AB87A;
-	color: #2AB87A;
-} */
-
+/* Elimina la decoración de texto de los enlaces dentro de los elementos con la clase .nav__content */
 .nav__content a {
 	text-decoration: none;
 }
 
+/* Define el color y el tamaño de la fuente del elemento <i> dentro de los elementos con la clase .nav__content */
 .nav__content i {
 	color: var(--light);
 	font-size: 20px;
 }
 
+/* Define el estilo del botón con la clase .cook */
 .cook {
-	border-radius: 100px;
-	display: flex;
-	gap: 0 0.5rem;
-	align-items: center;
-	background: canvasText;
-	color: var(--accent);
-	border: 0;
-	padding: 0 var(--gap);
-	white-space: nowrap;
-	z-index: 2;
-	cursor: pointer;
-	position: relative;
+	border-radius: 100px; /* Redondea las esquinas del botón */
+	display: flex; /* Utiliza un diseño flexible */
+	gap: 0 0.5rem; /* Define un espacio entre los elementos hijos del botón */
+	align-items: center; /* Centra los elementos hijos verticalmente */
+	background: canvasText; /* Define el color de fondo del botón */
+	color: var(--accent); /* Define el color del texto del botón */
+	border: 0; /* Elimina el borde del botón */
+	padding: 0 var(--gap); /* Define el relleno del botón */
+	white-space: nowrap; /* Evita que el texto del botón se divida en varias líneas */
+	z-index: 2; /* Define la posición en el eje z del botón */
+	cursor: pointer; /* Cambia el cursor a un puntero cuando se pasa por encima del botón */
+	position: relative; /* Define la posición del botón como relativa */
 }
 
+/* Define el estilo del pseudo-elemento ::before del botón con la clase .cook */
 .cook::before {
-	content: "";
-	position: absolute;
-	right: 100%;
-	width: 48px;
-	aspect-ratio: 1;
-	scale: calc(1 - var(--expanded)) 1;
-	transition: scale var(--transition);
-	transform-origin: 100% 50%;
+	content: ""; /* Define el contenido del pseudo-elemento */
+	position: absolute; /* Define la posición del pseudo-elemento como absoluta */
+	right: 100%; /* Define la distancia desde la parte derecha del pseudo-elemento hasta el borde derecho de su contenedor */
+	width: 48px; /* Define el ancho del pseudo-elemento */
+	aspect-ratio: 1; /* Mantiene la relación de aspecto del pseudo-elemento */
+	scale: calc(1 - var(--expanded)) 1; /* Define la escala del pseudo-elemento */
+	transition: scale var(--transition); /* Define una transición para la escala del pseudo-elemento */
+	transform-origin: 100% 50%; /* Define el origen de la transformación del pseudo-elemento */
 }
 
+/* Aumenta la opacidad del botón con la clase .cook cuando se pasa por encima o se enfoca */
 .cook:is(:hover, :focus-visible) {
 	--intent: 1;
 }
 
+/* Define el estilo del elemento SVG dentro del botón con la clase .cook */
 .cook svg {
-	stroke: var(--light);
-	width: 16px;
-	min-width: 16px;
-	stroke-width: 3px;
-	rotate: calc(var(--intent, 0) * 360deg);
-	transition: rotate var(--transition);
+	stroke: var(--light); /* Define el color del trazo del elemento SVG */
+	width: 16px; /* Define el ancho del elemento SVG */
+	min-width: 16px; /* Define el ancho mínimo del elemento SVG */
+	stroke-width: 3px; /* Define el ancho del trazo del elemento SVG */
+	rotate: calc(var(--intent, 0) * 360deg); /* Rota el elemento SVG */
+	transition: rotate var(--transition); /* Define una transición para la rotación del elemento SVG */
 }
 
+/* Oculta el segundo elemento <span> dentro del botón con la clase .cook */
 .cook span span {
 	display: none;
 }
 
+/* Define el color y el peso de la fuente del elemento <span> dentro del botón con la clase .cook */
 .cook span {
-    color: var(--light);
+	color: var(--light);
 	font-weight: bold;
 }
 
+/* Muestra el segundo elemento <span> dentro del botón con la clase .cook en pantallas con un ancho mínimo de 768px */
 @media(min-width: 768px) {
 	.cook span span {
 		display: inline-block;
 	}	
 }
 
+/* Define el estilo del enlace con la clase .button-link */
 .button-link {
-    text-decoration: none; /* Esto evita que se agregue subrayado al hipervínculo */
-	margin-top: 12%;
+	text-decoration: none; /* Esto evita que se agregue subrayado al hipervínculo */
+	margin-top: 12%; /* Define el margen superior del enlace */
 }
 
+/* Define el margen derecho del enlace con la clase .button-link en pantallas con un ancho máximo de 768px */
 @media (max-width: 768px) {
-    .button-link {
-        margin-right: 32%;
-    }
+	.button-link {
+		margin-right: 32%;
+	}
 }
 
+/* Define el estilo del elemento principal de la página */
 main {
-	min-height: 200vh;
-	width: 70ch;
-	margin: 0 auto;
-	margin-top: 6rem;
-	max-width: 100%;
+	min-height: 200vh; /* Establece la altura mínima del elemento principal al doble de la altura de la ventana de visualización */
+	width: 70ch; /* Establece el ancho del elemento principal a 70 caracteres */
+	margin: 0 auto; /* Centra el elemento principal horizontalmente en la página */
+	margin-top: 6rem; /* Establece el margen superior del elemento principal a 6 rem */
+	max-width: 100%; /* Asegura que el elemento principal no exceda el ancho de su contenedor */
 }
 
+/* Define el estilo del encabezado de nivel 1 */
 h1 {
-	font-family: 'EB Garamond', serif;
-	font-size: clamp(3rem, 4vw + 1rem, 8rem);
-	font-weight: 500;
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	line-height: 0.9;
+	font-family: 'EB Garamond', serif; /* Establece la fuente del encabezado a 'EB Garamond' */
+	font-size: clamp(3rem, 4vw + 1rem, 8rem); /* Establece el tamaño de la fuente del encabezado a un valor que se ajusta dinámicamente en función del ancho de la ventana de visualización */
+	font-weight: 500; /* Establece el peso de la fuente del encabezado a 500 */
+	text-align: center; /* Centra el texto del encabezado */
+	display: flex; /* Utiliza un diseño flexible para el encabezado */
+	flex-direction: column; /* Organiza los elementos hijos del encabezado en una columna */
+	line-height: 0.9; /* Establece la altura de línea del encabezado a 0.9 */
 }
 
+/* Define el estilo del primer elemento <span> dentro del encabezado de nivel 1 */
 h1 span:first-of-type {
-	font-variant: small-caps;
-	font-size: 0.5em;
+	font-variant: small-caps; /* Muestra el texto del elemento <span> en versalitas */
+	font-size: 0.5em; /* Establece el tamaño de la fuente del elemento <span> a la mitad del tamaño de la fuente del encabezado */
 }
 
+/* Define el estilo del último elemento <span> dentro del encabezado de nivel 1 */
 h1 span:last-of-type {
-	font-weight: 600;
+	font-weight: 600; /* Establece el peso de la fuente del elemento <span> a 600 */
 }
 
+/* Define el estilo del elemento con la clase .content */
 .content {
-	list-style-type: none;
-	display: flex;
-	height: 100%;
-/*	gap: 0 var(--gap);*/
-	align-items: center;
-	padding: 0 1rem;
-	margin: 0;
+	list-style-type: none; /* Elimina los marcadores de lista del elemento con la clase .content */
+	display: flex; /* Utiliza un diseño flexible para el elemento con la clase .content */
+	height: 100%; /* Establece la altura del elemento con la clase .content al 100% de la altura de su contenedor */
+/*	gap: 0 var(--gap);*/ /* Define un espacio entre los elementos hijos del elemento con la clase .content (actualmente comentado) */
+	align-items: center; /* Centra los elementos hijos del elemento con la clase .content verticalmente */
+	padding: 0 1rem; /* Define el relleno del elemento con la clase .content a 0 en la parte superior e inferior y 1 rem en la parte izquierda y derecha */
+	margin: 0; /* Elimina los márgenes del elemento con la clase .content */
 }
 
+
+/* Verifica si el navegador soporta la propiedad animation-timeline con valor scroll */
 @supports(animation-timeline: scroll()) {
+	/* Define las líneas de tiempo para los elementos root, header, about, service y follow */
 	:root {
 		timeline-scope: --header, --about, --service, --follow;
 	}
+	/* Asigna la línea de tiempo --header al elemento header */
 	header {
 		view-timeline-name: --header;
 	}
+	/* Define una animación para el elemento nav cuando se encuentra en la línea de tiempo --header */
 	nav {
 		animation: expand both steps(1, end);
 		animation-timeline: --header;
 		animation-range: exit;
 	}
 
+	/* Define la opacidad y la transición de los enlaces dentro de los elementos li */
 	li a {
 		opacity: calc(0.5 + (var(--active)));
 		position: relative;
 		transition: opacity var(--transition);
 	}
 
+	/* Aumenta la opacidad de los enlaces cuando el elemento li está en hover o en focus */
 	li:is(:hover, :focus-visible) a {
 		opacity: 1;
 	}
 
+	/* Asigna las líneas de tiempo a los elementos con id about, service y follow */
 	#about { view-timeline: --about; }
 	#service { view-timeline: --service; }
 	#follow { view-timeline: --follow; }
 
+	/* Define una animación para los elementos li dentro de nav */
 	nav li {
 		animation: activate both steps(1);
 	}
 
+	/* Asigna las líneas de tiempo a los elementos li que contienen enlaces a about, service y follow */
 	li:has([href="#about"]) {
 		animation-timeline: --about;
 		animation-range: entry -100% exit 100%;
@@ -370,15 +425,18 @@ h1 span:last-of-type {
 		animation-timeline: --follow;
 	}
 
+	/* Define la animación activate */
 	@keyframes activate {
 		50% { --active: 1; }
 	}
 
+	/* Define la posición del elemento span dentro de un enlace */
 	a span {
 		position: relative;
 	}
 
-/*	nav a span::after {
+	/* Define el estilo del pseudo-elemento after del elemento span dentro de un enlace */
+	/*	nav a span::after {
 		content: "•";
 		position: absolute;
 		right: calc(100% + 0.4rem);
@@ -390,38 +448,46 @@ h1 span:last-of-type {
 		transition: scale var(--transition);
 	}*/
 
+	/* Define el estilo del elemento con la clase nav__content */
 	.nav__content {
 		grid-template-columns: auto calc(var(--expanded) * (3 * var(--item))) auto;
 		transition: grid-template-columns 1s var(--elastic);
 	}
+	/* Define el estilo del elemento con la clase cook */
 	.cook {
 		padding-left: calc(var(--expanded) * var(--gap));
 		transition: padding 1s var(--elastic);
 	}
+	/* Define la animación expand */
 	@keyframes expand { to { --expanded: 1; } }
 }
 
 /* Styles para footer*/
+
+/* Define el estilo del elemento footer */
 footer {
-    padding: 2rem;
-    color: var(--dark);
-    text-align: center;
+	padding: 2rem; /* Establece el relleno del pie de página a 2 rem */
+	color: var(--dark); /* Establece el color del texto del pie de página a la variable --dark */
+	text-align: center; /* Centra el texto del pie de página */
 }
 
+/* Define el estilo de la lista de iconos sociales */
 .social-icons {
-list-style: none;
-display: flex;
-justify-content: center;
-margin-top: 20px;
-color: var(--dark);
+	list-style: none; /* Elimina los marcadores de lista de los iconos sociales */
+	display: flex; /* Utiliza un diseño flexible para los iconos sociales */
+	justify-content: center; /* Centra los iconos sociales horizontalmente */
+	margin-top: 20px; /* Establece el margen superior de los iconos sociales a 20px */
+	color: var(--dark); /* Establece el color de los iconos sociales a la variable --dark */
 }
 
+/* Define el estilo de los elementos li dentro de la lista de iconos sociales */
 .social-icons li {
-margin: 0 10px;
+	margin: 0 10px; /* Establece los márgenes izquierdo y derecho de los elementos li a 10px */
 }
 
+/* Define el estilo de los enlaces dentro de la lista de iconos sociales */
 .social-icons a {
-color: var(--dark);
-text-decoration: none;
-font-size: 24px;
+	color: var(--dark); /* Establece el color de los enlaces a la variable --dark */
+	text-decoration: none; /* Elimina la decoración de los enlaces */
+	font-size: 24px; /* Establece el tamaño de la fuente de los enlaces a 24px */
 }
