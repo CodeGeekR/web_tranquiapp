@@ -2,18 +2,19 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>tranquiapp_monitoreo para la salud mental</title>
-    <meta name="description" content="aplicación web para monitorear la salud mental" />
+    <meta charset="UTF-8" /> <!-- Define la codificación de caracteres del documento -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsive -->
+    <title>tranquiapp_monitoreo para la salud mental</title> <!-- Define el título del documento -->
+    <meta name="description" content="aplicación web para monitorear la salud mental" /> <!-- Proporciona una descripción del documento -->
     <meta property="og:image" content="https://tranquiapp.com/img/og-tranquiapp.png" />
-    <meta property="og:url" content="https://tranquiapp.com" />
-    <meta property="og:type" content="website" />
+    <!-- Define la imagen que se mostrará cuando se comparta el enlace en redes sociales -->
+    <meta property="og:url" content="https://tranquiapp.com" /> <!-- Define la URL de la página -->
+    <meta property="og:type" content="website" /> <!-- Define el tipo de contenido (en este caso, un sitio web) -->
     <link rel="canonical" href="https://tranquiapp.com" />
-    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon_brain.png" />
+    <!-- Evita problemas de contenido duplicado al especificar la URL "canónica" o "preferida" -->
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon_brain.png" /> <!-- Define el favicon de la página -->
 
-
-    <!-- Libraries Stylesheet -->
+    <!-- Hoja de estilos de las librerías -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -23,52 +24,49 @@
     <!-- libreria de Tabler icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
 
-    <!-- Template Stylesheet -->
+    <!-- Hoja de estilos del template -->
     <link href="./css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
+    <!-- Enlace a la página principal con un icono de cerebro -->
     <a class="bear-link" href="./index.html" target="_blank" rel="noreferrer noopener">
         <i class="ti ti-brain"></i>
     </a>
+
+    <!-- Cabecera de la página con el título y una descripción -->
     <header>
-        <h1><span></span><span>Tranqui App</span></h1>
-        <p>Aplicacion de monitoreo y salud mental</p>
+        <h1><span></span><span>Tranqui App</span></h1> <!-- Título de la página -->
+        <p>Aplicacion de monitoreo y salud mental</p> <!-- Descripción de la página -->
     </header>
 
-
-    <svg width="1000" height="1000" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="Gradient1" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0%" stop-color="#b216e0"/>
-            <stop offset="100%" stop-color="#10eeac"/>
-          </linearGradient>
-        </defs>
-        <path d="M10 80 Q 52.5 10, 95 80 T 180 80" fill="url(#Gradient1)"/>
-      </svg>
-      
-
-
+    <!-- Navegación de la página -->
     <nav>
         <div class="nav__content">
+            <!-- Enlace con un icono -->
             <a href="#">
                 <i class="ti ti-layers-intersect"></i>
             </a>
+
+            <!-- Lista de enlaces a diferentes secciones de la página -->
             <ul class="content">
                 <li>
-                    <a href="#about"><span>Nosotros</span></a>
+                    <a href="#about"><span>Nosotros</span></a> <!-- Enlace a la sección "Nosotros" -->
                 </li>
                 <li>
-                    <a href="#service"><span>Servicios</span></a>
+                    <a href="#service"><span>Servicios</span></a> <!-- Enlace a la sección "Servicios" -->
                 </li>
                 <li>
-                    <a href="#follow"><span>Ingresar</span></a>
+                    <a href="#follow"><span>Ingresar</span></a> <!-- Enlace a la sección "Ingresar" -->
                 </li>
             </ul>
+
+            <!-- Botón para comenzar, con un enlace a la sección "Nosotros" -->
             <a href="#about" class="button-link">
                 <button class="cook">
-                    <span>Comenzar</span>
+                    <span>Comenzar</span> <!-- Texto del botón -->
+                    <!-- Icono de flecha en el botón -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                     </svg>
@@ -77,31 +75,43 @@
         </div>
     </nav>
     <main>
+        <!-- Sección "Nosotros" -->
         <section id="about">
-            <h2>Nosotros</h2>
+            <h2>Nosotros</h2> <!-- Título de la sección -->
             <p>
-                Texto aqui
+                Texto aqui <!-- Contenido de la sección -->
             </p>
         </section>
+
+        <!-- Sección "Servicios" -->
         <section id="service">
-            <h2>Servicios</h2>
+            <h2>Servicios</h2> <!-- Título de la sección -->
             <p>
-                Texto aqui
+                Texto aqui <!-- Contenido de la sección -->
             </p>
         </section>
+
+        <!-- Sección "Inicia sesión" -->
         <section id="follow">
-            <p>Acerca de</p>
+            <p>Acerca de</p> <!-- Título de la sección -->
+            <!-- Enlace a la página de inicio de sesión -->
             <a class="follow-link" href="./index.html" target="_blank" rel="noreferrer noopener">
-                <i class="ti ti-brain"></i>
-                <span>Inicia sesión</span>
+                <i class="ti ti-brain"></i> <!-- Icono del enlace -->
+                <span>Inicia sesión</span> <!-- Texto del enlace -->
             </a>
         </section>
+
+        <img src="./img/degradado1.webp" style="position: absolute; top: -400px; left: -450px;">
+        <img src="./img/cabezaloto.webp" style="position: absolute; top: -500px; left: 650px;">
     </main>
+
+    <!-- Pie de página -->
     <footer>
         <div class="container">
             <div class="row d-flex flex-column flex-md-row align-items-center">
                 <div class="col-md-6 social-icons d-flex flex-column">
-                    <h4>Síguenos en redes sociales</h4>
+                    <h4>Síguenos en redes sociales</h4> <!-- Título de la sección -->
+                    <!-- Lista de enlaces a redes sociales -->
                     <ul class="list-inline mt-2">
                         <li class="list-inline-item"><a href="#" target="_blank"><i class="ti ti-brand-facebook"></i></a></li>
                         <li class="list-inline-item"><a href="#" target="_blank"><i class="ti ti-brand-instagram"></i></a></li>
@@ -109,24 +119,24 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <p>Todos los derechos reservados <br> Tranqui App</p>
+                    <p>Todos los derechos reservados <br> Tranqui App</p> <!-- Texto de derechos reservados -->
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <p>&copy; 2024</p>
+                    <p>&copy; 2024</p> <!-- Año de copyright -->
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript Libraries -->
+    <!-- Importación de librerías JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
-    <!-- Javascript File -->
+    <!-- Importación del archivo JavaScript principal -->
     <script src="./js/main.js"></script>
 </body>
 
