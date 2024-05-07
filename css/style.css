@@ -40,6 +40,14 @@
   );
 }
 
+* {
+    box-sizing: border-box;
+    position: relative;
+    min-width: 0;
+    /* Herramienta de depuración para maquetar web */
+    /* border: 1px solid red; */
+}
+
 html {
 	color-scheme: light only;
 }
@@ -168,10 +176,6 @@ nav li a {
 	white-space: nowrap;
 }
 
-footer {
-	padding: 2rem;
-}
-
 [href="#"] {
 	width: 48px;
 	display: grid;
@@ -218,7 +222,7 @@ footer {
 }
 
 .nav__content i {
-	color: #2AB87A;
+	color: var(--light);
 	font-size: 20px;
 }
 
@@ -253,7 +257,7 @@ footer {
 }
 
 .cook svg {
-	stroke: #2AB87A;
+	stroke: var(--light);
 	width: 16px;
 	min-width: 16px;
 	stroke-width: 3px;
@@ -266,7 +270,7 @@ footer {
 }
 
 .cook span {
-    color: #2AB87A;
+    color: var(--light);
 	font-weight: bold;
 }
 
@@ -279,6 +283,12 @@ footer {
 .button-link {
     text-decoration: none; /* Esto evita que se agregue subrayado al hipervínculo */
 	margin-top: 12%;
+}
+
+@media (max-width: 768px) {
+    .button-link {
+        margin-right: 32%;
+    }
 }
 
 main {
@@ -389,4 +399,29 @@ h1 span:last-of-type {
 		transition: padding 1s var(--elastic);
 	}
 	@keyframes expand { to { --expanded: 1; } }
+}
+
+/* Styles para footer*/
+footer {
+    padding: 2rem;
+    color: var(--dark);
+    text-align: center;
+}
+
+.social-icons {
+list-style: none;
+display: flex;
+justify-content: center;
+margin-top: 20px;
+color: var(--dark);
+}
+
+.social-icons li {
+margin: 0 10px;
+}
+
+.social-icons a {
+color: var(--dark);
+text-decoration: none;
+font-size: 24px;
 }
