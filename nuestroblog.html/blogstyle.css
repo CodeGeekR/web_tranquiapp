@@ -1,0 +1,36 @@
+.contenedor-transicion{
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+}
+
+.contenedores-mini{
+    width: 260px;
+    height: 340px;
+    padding: 20px;
+    border: 5px solid black;
+    border-radius: 12px;
+    margin: 10px;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+    margin-left: 68px;
+}
+
+h3{
+    display: flex;
+    justify-content: center;
+}
+
+.contenedores-mini button {
+    display: block;   
+    margin: 10px auto;
+    border: 3px solid rgb(140, 40, 140);
+    padding: 12px;
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 16px;
+    border-radius: 20px;
+}
